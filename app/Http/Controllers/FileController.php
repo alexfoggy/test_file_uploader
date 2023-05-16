@@ -17,7 +17,7 @@ class FileController extends Controller
     public function filesLibrary()
     {
         $files = [];
-        if (scandir(base_path() . $this->uploadPath, SCANDIR_SORT_DESCENDING)) {
+        if (file_exists(base_path() . $this->uploadPath)) {
             $files = scandir(base_path() . $this->uploadPath, SCANDIR_SORT_DESCENDING);
         }
 
