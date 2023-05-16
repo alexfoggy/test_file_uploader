@@ -16,7 +16,11 @@ class FileController extends Controller
 
     public function filesLibrary()
     {
-        $files = scandir(base_path() . $this->uploadPath, SCANDIR_SORT_DESCENDING);
+        $files = [];
+        if (scandir(base_path() . $this->uploadPath, SCANDIR_SORT_DESCENDING)) {
+            $files = scandir(base_path() . $this->uploadPath, SCANDIR_SORT_DESCENDING);
+        }
+
         array_splice($files, -2);
 
         return view('files', get_defined_vars());

@@ -67,8 +67,8 @@
             <ul class="resumable-list"></ul>
 
         </div>
-        <div class="mt-12">
-            <h2 class="my-2 font-bold"> Uploaded Files</h2>
+        <div class="mt-12 p-4 border rounded-lg">
+            <h2 class="my-2 font-bold text-center"> Uploaded Files</h2>
             @if(!empty($files))
                 @foreach($files as $one_file)
                     @if($one_file != '.' || $one_file != '..')
@@ -78,6 +78,10 @@
                         </p>
                     @endif
                 @endforeach
+
+            @else
+
+                <h3 class="text-center text-gray-500">No files in folder</h3>
 
             @endif
 
